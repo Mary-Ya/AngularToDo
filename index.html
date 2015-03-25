@@ -1,16 +1,26 @@
-<!doctype html>
-<html ng-app>
+<!DOCTYPE html>
+<html ng-app="taskList">
 
 <head>
     <script src="./dist/angular/angular.min.js"></script>
+    <script src="./js/toDoProject.js"></script>
+    <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./dist/bootstrap/css/css/bootstrap-theme.min.css">
+    <title>Angular Task List</title>
 </head>
 
-<body>
-    <div>
-        <label>Task:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
+<body ng-controller="TaskController as taskList">
+    <div class="jumbotron">
+        <h1 class="page-header" align="center">Task List</h1>
+        <div align="center">
+            <form novalidate class="simple-form" ng-controller="AddTaskController as newTask">
+                <input type="text" ng-model="newTask.text" placeholder="Enter your task here">
+                <button ng-click='newTask.add()' type="button">Save</button>
+            </form>
+        </div>
+    </div>
+    <div align="center">
+        <h2 ng-repeat="task in taskList.tasks">{{task.text}}</h2>
     </div>
 </body>
 

@@ -17,10 +17,14 @@
                 <input type="text" ng-model="newTask.text" placeholder="Enter your task here">
                 <button ng-click='newTask.add()' type="button">Save</button>
             </form>
+            <hr>
+            <form>
+                <input type="text" ng-model="query" placeholder="Search Task">
+            </form>
         </div>
     </div>
     <div align="center">
-        <h2 ng-repeat="task in taskList.tasks">{{task.text}}</h2>
+        <h2 ng-repeat="task in taskList.tasks | filter:query">{{task.text}}</h2>
     </div>
 </body>
 

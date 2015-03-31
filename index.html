@@ -3,29 +3,49 @@
 
 <head>
     <script src="./dist/angular/angular.min.js"></script>
-    <script src="./js/toDoProject.js"></script>
+
+    <script src="./app/toDoProject.js"></script>
+
+    <script src="./app/tabs/planer-tabs-controller.js"></script>
+    <script src="./app/year-plan/year-plan-controller.js"></script>
+
     <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="./dist/bootstrap/css/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap-theme.min.css">
     <title>Angular Task List</title>
 </head>
 
-<body ng-controller="TaskController as taskList">
-    <div class="jumbotron">
-        <h1 class="page-header" align="center">Task List</h1>
-        <div align="center">
-            <form novalidate class="simple-form" ng-controller="AddTaskController as newTask">
-                <input type="text" ng-model="newTask.text" placeholder="Enter your task here">
-                <button ng-click='newTask.add()' type="button">Save</button>
-            </form>
-            <hr>
-            <form>
-                <input type="text" ng-model="query" placeholder="Search Task">
-            </form>
+<body ng-controller="PlanerController as planer">
+
+    <div class="row">
+        <div class="col-md-3">
+            <h1>PLAN</h1>
+        </div>
+        <div class="col-md-9">
+            <!-- Add task here  -->
+            <task-input></task-input>
         </div>
     </div>
-    <div align="center">
-        <h2 ng-repeat="task in taskList.tasks | filter:query">{{task.text}}</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <task-filters>
+
+            </task-filters>
+            <hr>
+        </div>
+        <div class="col-md-9">
+
+            <!-- Planer Tabs  -->
+            <planer-tabs></planer-tabs>
+
+            <hr>
+        </div>
     </div>
+
+    <footer>
+        <hr>
+    </footer>
+
 </body>
 
 </html>

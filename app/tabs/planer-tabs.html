@@ -1,0 +1,30 @@
+<!-- Tabs Go Here -->
+<section>
+    <ul class="nav nav-pills">
+        <li ng-class="{ active:tab.isSet(1) }">
+            <a href ng-click="tab.setTab(1)">Year</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(2) }">
+            <a href ng-click="tab.setTab(2)">Month</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(3) }">
+            <a href ng-click="tab.setTab(3)">Week</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(4) }">
+            <a href ng-click="tab.setTab(4)">Day</a>
+        </li>
+    </ul>
+
+    <!--  Year plan  -->
+    <year-plan ng-show="tab.isSet(1)"></year-plan>
+
+    <!--  Month plan  -->
+    <month-plan product-specs ng-show="tab.isSet(2)"></month-plan>
+
+    <!--  Week plan   -->
+    <week-plan ng-show="tab.isSet(3)"></week-plan>
+
+    <!--  Day plan  -->
+    <day-plan ng-show="tab.isSet(4)"></day-plan>
+
+</section>

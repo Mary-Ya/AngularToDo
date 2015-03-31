@@ -216,7 +216,9 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-node_modules
+node_modules/
+АРХИВ/
+УЧЕБНЫЙ/
 
 *.sublime-project
 *.sublime-workspace

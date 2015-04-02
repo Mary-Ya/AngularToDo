@@ -7,45 +7,63 @@
     <script src="./app/toDoProject.js"></script>
 
     <script src="./app/tabs/planer-tabs-controller.js"></script>
-    <script src="./app/year-plan/year-plan-controller.js"></script>
+    <script src="./app/tabs/year-plan/year-plan-controller.js"></script>
 
     <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./dist/bootstrap/css/bootstrap-theme.css">
     <title>Angular Task List</title>
 </head>
 
-<body ng-controller="PlanerController as planer">
-
-    <div class="row">
-        <div class="col-md-3">
-            <h1>PLAN</h1>
-        </div>
-        <div class="col-md-9">
-            <!-- Add task here  -->
-            <task-input></task-input>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-3">
-            <task-filters>
-
-            </task-filters>
-            <hr>
-        </div>
-        <div class="col-md-9">
-
+<body ng-controller="PlanerController as planer" role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">PLAN</a>
+            </div>
             <!-- Planer Tabs  -->
             <planer-tabs></planer-tabs>
-
-            <hr>
         </div>
-    </div>
+    </nav>
 
-    <footer>
+    <div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3">
+                <h1></h1>
+            </div>
+            <div class="col-md-9">
+                <!-- Add task here  -->
+                <task-input></task-input>
+            </div>
+        </div>
         <hr>
-    </footer>
+        <div class="row">
+            <div class="col-md-3">
+                <task-filters>
 
+                </task-filters>
+                <hr>
+            </div>
+            <div class="col-md-9">
+                <!--  Year plan  -->
+                <year-plan ng-show="tab.isSet(1)"></year-plan>
+
+                <!--  Month plan  -->
+                <month-plan product-specs ng-show="tab.isSet(2)"></month-plan>
+
+                <!--  Week plan   -->
+                <week-plan ng-show="tab.isSet(3)"></week-plan>
+
+                <!--  Day plan  -->
+                <day-plan ng-show="tab.isSet(4)"></day-plan>
+                <hr>
+            </div>
+        </div>
+</div>
+        <footer>
+            <hr>
+        </footer>
+    </div>
 </body>
 
 </html>

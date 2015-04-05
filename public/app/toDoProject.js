@@ -14,6 +14,12 @@ app.controller('PlanerController', function($http) {
     this.loadPlans();*/
 });
 
+app.controller('todayController', function(){
+    var timeInMs = new Date();
+    this.day = timeInMs.getDate();
+    this.year = timeInMs.getFullYear();
+});
+
 app.directive("taskInput", function() {
     return {
         restrict: "E",

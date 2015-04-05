@@ -1,0 +1,9 @@
+div.day-in-month {
+	border-color: silver;
+	border-width: 1px;
+	background-color: #fff;
+	float: left;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}

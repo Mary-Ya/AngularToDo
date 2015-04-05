@@ -1,4 +1,20 @@
 <!-- Year plan Go Here -->
-<section>
-    <h2>YEAR CALENDAR</h2>
-</section>
+<link rel="stylesheet" href="app/tabs/year-plan/year-plan.css" type="text/css">
+
+<div ng-init="months = [{name:'January'},
+					   {name:'Febrary'},
+					   {name:'March'},
+					   {name:'April'},
+					   {name:'May'},
+					   {name:'June'},
+					   {name:'July'},
+					   {name:'August'},
+					   {name:'September'},
+					   {name:'October'},
+					   {name:'November'},
+					   {name:'Decemder'}]">
+</div>
+<div class="month-board" ng-repeat="month in months">
+    <p class="month-name">{{month.name}}</p>
+    <p class="month-tasks">Here should be tasks</p>
+</div>

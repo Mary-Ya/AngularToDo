@@ -2,6 +2,16 @@ var app = angular.module('taskList', []);
 
 app.controller('PlanerController', function($http) {
     this.plans = prevPlans;
+    /*this.loadPlans = function() {
+        var httpRequest = $http({
+            method: 'POST',
+            url: '/list.json'
+        }).success(function(data, status) {
+            this.plans = data;
+        });
+
+    };
+    this.loadPlans();*/
 });
 
 app.directive("taskInput", function() {

@@ -1,19 +1,6 @@
 <!-- Year plan Go Here -->
 <link rel="stylesheet" href="app/tabs/year-plan/year-plan.css" type="text/css">
 <div ng-controller="todayController as today">
-    <div ng-init="months = [{name:'January'},
-					   {name:'Febrary'},
-					   {name:'March'},
-					   {name:'April'},
-					   {name:'May'},
-					   {name:'June'},
-					   {name:'July'},
-					   {name:'August'},
-					   {name:'September'},
-					   {name:'October'},
-					   {name:'November'},
-					   {name:'December'}]">
-    </div>
     <div class="row">
         <div class="col-md-5">
             <p class="text-right">
@@ -29,7 +16,7 @@
             </p>
         </div>
     </div>
-    <div class="month-board" ng-repeat="month in months">
+    <div class="month-board" ng-repeat="month in today.months">
         <p class="month-name">{{month.name}}</p>
         <p class="month-tasks">Here should be tasks</p>
     </div>

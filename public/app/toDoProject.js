@@ -16,7 +16,20 @@ app.controller('PlanerController', function($http) {
 
 app.controller('todayController', function(){
     var timeInMs = new Date();
+    this.months = [{name:'January'},
+                       {name:'Febrary'},
+                       {name:'March'},
+                       {name:'April'},
+                       {name:'May'},
+                       {name:'June'},
+                       {name:'July'},
+                       {name:'August'},
+                       {name:'September'},
+                       {name:'October'},
+                       {name:'November'},
+                       {name:'December'}];
     this.day = timeInMs.getDate();
+    this.month = this.months[timeInMs.getMonth()].name;
     this.year = timeInMs.getFullYear();
 });
 

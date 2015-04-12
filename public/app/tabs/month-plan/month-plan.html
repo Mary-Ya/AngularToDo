@@ -1,6 +1,6 @@
 <!-- Month plan Go Here -->
 <link rel="stylesheet" href="app/tabs/month-plan/month-plan.css" type="text/css">
-
+<div ng-controller="todayController as today">
 <div ng-init="days = [{name:'1'},
 					   {name:'2'},
 					   {name:'3'},
@@ -17,6 +17,22 @@
 
 
 <section>
+    <div class="row">
+        <div class="col-md-5">
+            <p class="text-right">
+                <button class="btn btn-default">PREV</button>
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p class="text-center">{{today.month}}</p>
+        </div>
+        <div class="col-md-5">
+            <p class="text-left">
+                <button class="btn btn-default">NEXT</button>
+            </p>
+        </div>
+    </div>
+
     <div class="row">
         <div class="day-in-month">.col-md-1</div>
         <div class="day-in-month">.col-md-1</div>
